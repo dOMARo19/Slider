@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="logo-title">SITE LOGO</h1>
+
+    <nav class="nav-bar">
+        <ul class="nav-list">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+  </header>
+
+    <div id="carousel" class="carousel">
+      
+      <div id="slides-container" class="slides">
+        <div class="slide active">
+          <img src="images/image1.jpg" alt="Slide 1">
+        </div>
+        <div class="slide">
+          <img src="images/image2.jpg" alt="Slide 2">
+        </div>
+        <div class="slide">
+          <img src="images/image3.jpg" alt="Slide 3">
+        </div>
+        <div class="slide">
+          <img src="images/image4.jpg" alt="Slide 4">
+        </div>
+        <div class="slide">
+          <img src="images/image5.jpg" alt="Slide 5">
+        </div>
+      </div>
+
+      <div id="controls-container" class="controls">
+        <div id="pause-btn" class="control control-pause">
+            <i class="fas fa-pause-circle"></i>
+        </div>
+        <div id="prev-btn" class="control control-prev">
+            <i class="fas fa-angle-left"></i>
+        </div>
+        <div id="next-btn" class="control control-next">
+            <i class="fas fa-angle-right"></i>
+        </div>
+      </div>
+
+      <div id="indicators-container" class="indicators">
+        <div class="indicator active" data-slide-to="0">
+          <img class="indicator-img" src="images/image1.jpg" alt="Slide 1">
+        </div>
+        <div class="indicator" data-slide-to="1">
+          <img class="indicator-img" src="images/image2.jpg" alt="Slide 2">
+        </div>
+        <div class="indicator" data-slide-to="2">
+          <img class="indicator-img" src="images/image3.jpg" alt="Slide 3">
+        </div>
+        <div class="indicator" data-slide-to="3">
+          <img class="indicator-img" src="images/image4.jpg" alt="Slide 4">
+        </div>
+        <div class="indicator" data-slide-to="4">
+          <img class="indicator-img" src="images/image5.jpg" alt="Slide 5">
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+
+      <div class="footer__contacts">
+        <span>CONTACT US</span><br>
+      </div>
+  
+      <div class="footer__container">
+        <div class="footer__icons">
+          <a href="#">
+            <i class="fab fa-facebook-square"></i>
+          </a>
+  
+          <a href="#">
+            <i class="fab fa-twitter-square"></i>
+          </a>
+  
+          <a href="#">
+            <i class="fab fa-pinterest-square"></i>
+          </a>
+        </div>
+  
+      </div>
+    </footer>
+    
+      <script src="main.js" type="module"></script>
+      
+      <script>
+        const timerId = null
+      </script>
+</body>
+</html>
