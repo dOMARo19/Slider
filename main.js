@@ -1,4 +1,4 @@
-;(function () {
+
     const container = document.querySelector('#carousel')
     const slides = document.querySelectorAll('.slide')
     const indicatorsContainer = container.querySelector('#indicators-container')
@@ -10,7 +10,7 @@
     const SLIDES_COUNT = slides.length
     const CODE_ARROW_LEFT = `ArrowLeft`
     const CODE_ARROW_RIGHT = `ArrowRight`
-    const CODE_SPACE = `Space`
+    const CODE_SPACE = ` `
     const FA_PAUSE = `<i class="fas fa-pause-circle"></i>`
     const FA_PLAY = `<i class="fas fa-play-circle"></i>`
     const TIMER_INTERVAL = 3000
@@ -82,13 +82,15 @@
       if (key === CODE_ARROW_RIGHT) nextHandler()
       if (key === CODE_SPACE) {
         e.preventDefault()
+        e.stopPropagation()
         pausePlayHandler()
       }
       
     }
 
+
     function swipeStartHandler(e) {
-      startPosX = e instanceof MouseEvent ? e.clientX : e.changedTouches[0].clientX
+      startPosX = e instanceof MouseEvent ? e.clientX : e.touches[0].clientX
     }
 
     function swipeEndHandler(e) {
@@ -99,14 +101,14 @@
     
     function initListeners() {
       pauseBtn.addEventListener('click', pausePlayHandler)
-      nextBtn.addEventListener('click', nextHandler)
       prevBtn.addEventListener('click', prevHandler)
+      nextBtn.addEventListener('click', nextHandler)
       indicatorsContainer.addEventListener('click', indicateHandler)
-      container.addEventListener('keydown', pressKeyHandler)
       container.addEventListener('touchstart', swipeStartHandler, { passive: true })
-      container.addEventListener('touchend', swipeEndHandler)
       container.addEventListener('mousedown', swipeStartHandler)
+      container.addEventListener('touchend', swipeEndHandler)
       container.addEventListener('mouseup', swipeEndHandler)
+      document.addEventListener('keydown', pressKeyHandler)
       
     }
 
@@ -116,4 +118,3 @@
     }
 
     init()
-})()
