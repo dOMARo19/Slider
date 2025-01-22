@@ -2,8 +2,14 @@
 essential styles:
 these make the slideshow work
 */
+* {
+  box-sizing: border-box;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    
 }
 
 .header {
@@ -37,14 +43,41 @@ body {
 }
 .carousel {
     user-select: none;
-}
+    position: relative;
+    overflow: hidden;
+} 
 
 .slides {
     position: relative;
     height: 500px;
+    width: 100%;
     padding: 0px;
-    margin: 0px;
     list-style-type: none;
+}
+
+.slide {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  opacity: 0;
+  z-index: -999;
+  transition: opacity 0.5s; 
+  display: flex;
+  justify-content: center;
+} 
+
+.slide-img {
+  margin: 0 auto;
+  width: auto;
+  height: 100%;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 0;
 }
 
 .indicators,
@@ -84,23 +117,6 @@ body {
 
 .indicator.active {
     background-color: blue;
-}
-.slide {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    z-index: 1;
-    transition: opacity 1s;
-    display: flex;
-    justify-content: center;
-}
-
-.active {
-    opacity: 1;
-    z-index: 2;
 }
 
 .footer {
@@ -154,6 +170,7 @@ body {
         padding: 0px;
         margin: 0px;
         list-style-type: none;
+        transition: transform 0.5s ease-in-out;
       }
       .indicators,
       .controls {
